@@ -5,7 +5,8 @@ public class AnimalMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//This object coming from the Animal class contains the main method
+		//Create objects (instances of the Animal class) coming from the Animal class 
+		//This class herein contains the main method
 		
 		//We use the constructor to set the information upon creation of the object
 		
