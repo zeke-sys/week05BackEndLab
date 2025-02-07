@@ -4,11 +4,11 @@ public class Animal { //class is created is written in pascal case (not camel ca
 	
 	//this class has two constructors - getters, setters, and a describe() method
 	
-	String name;
-	String type;
-	double weight;
-	double height;
-	String location;
+	private String name; //we add the access modifier private here b/c we only want it to be accessed within the class itself
+	private String type; //with an access modifier like private, we then have to use getters and setters to access the data
+	private double weight;
+	private double height;
+	private String location;
 	
 	public Animal() {} //adding this to use the default Java constructor Animal() method, if needed in the main
 	
@@ -22,13 +22,15 @@ public class Animal { //class is created is written in pascal case (not camel ca
 		
 	}
 	
-	//getters and setters
+	//getters and setters - we use these not only to access the data but we could use methods that validate the data that gets inputed as well
 	public String getName() {
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String name) { //using a method where we check the length of the name so it's valid (see below for method)
+		if (checkLength(name, 1)) {
+			this.name = name;
+		}
 	}
 	
 	public String getType() {
@@ -36,7 +38,9 @@ public class Animal { //class is created is written in pascal case (not camel ca
 	}
 	
 	public void setType(String type) {
+		if (checkLength(type, 1)) {
 		this.type = type;
+		}
 	}
 	
 	public double getWeight() {
@@ -44,7 +48,7 @@ public class Animal { //class is created is written in pascal case (not camel ca
 	}
 	
 	public void setWeight(double weight) {
-		this.weight = weight;
+			this.weight = weight;
 	}
 	
 	public double getHeight() {
@@ -52,7 +56,7 @@ public class Animal { //class is created is written in pascal case (not camel ca
 	}
 	
 	public void setHeight(double height) {
-		this.height = height;
+			this.height = height;
 	}
 	
 	public String getLocation() {
@@ -60,11 +64,22 @@ public class Animal { //class is created is written in pascal case (not camel ca
 	}
 	
 	public void setLocation(String location) {
-		this.location = location;
+		if (checkLength(location, 1)) {
+			this.location = location;
+		}
+	}
+	
+	//private methods
+	//1
+	private boolean checkLength(String str, int length) {
+		return str.length() > length;
 	}
 	
 	
+	
+	//public methods
 	//describe method
+	
 	public void describe() {
 		System.out.println("Animal Description");
 		System.out.println("------------------");
