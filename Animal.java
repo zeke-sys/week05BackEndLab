@@ -10,8 +10,9 @@ public class Animal { //class is created is written in pascal case (not camel ca
 	double height;
 	String location;
 	
-	public Animal() {}
+	public Animal() {} //adding this to use the default Java constructor Animal() method, if needed in the main
 	
+	//Adding this constructor so we don't have to create it in the main and so it's reusable 
 	public Animal(String name, String type, double weight, double height, String location) {
 		this.name = name;
 		this.type = type;
